@@ -1,0 +1,79 @@
+#produtos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 5em;
+}
+
+.box-container {
+    display: block;
+    width: 80em;
+    margin-left: 5.5em;
+}
+
+.box-product {
+    width: 10em;
+    height: 15em;
+    display: inline-block;
+    background-color: #fff;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3em;
+    margin-left: 2.6em;
+    border: solid 0.1em;
+    border-radius: 0.3em;
+    box-shadow: 0px 0px 119px -18px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 119px -18px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 119px -18px rgba(0, 0, 0, 0.75);
+}
+
+.img-product {
+    height: 7em;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name-product {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-product {
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-product {
+    width: 12em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #599bb3;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+
+.btn-product:hover {
+    background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color: #408c99;
+}
+
+.btn-product:active {
+    position: relative;
+    top: 1px;
+}

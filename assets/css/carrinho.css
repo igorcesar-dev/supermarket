@@ -1,0 +1,78 @@
+/* Janela do carrinho de compras */
+
+#carrinho {
+    display: block;
+}
+
+.title-shopping-cart {
+    width: 25em;
+    height: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.head {
+    display: flex;
+    margin-left: 4.5em;
+    margin-top: 1em;
+}
+
+.head h2 {
+    margin: 10px 0px 10px 30px;
+    font-size: 22px;
+}
+
+.box-item {
+    display: flex;
+}
+
+.img-cart img {
+    width: 5em;
+    height: 5em;
+    display: block;
+}
+
+.name-cart {
+    width: 8em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qtd-cart {
+    width: 8em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preco-cart {
+    width: 8em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sidecart */
+@media screen and (min-width: 676px) {
+    .box-carrinho {
+        width: 26em;
+        height: 30em;
+        position: fixed;
+        right: 0;
+        top: 25%;
+        background-color: #FFF;
+        border: solid 1px;
+        border-radius: 10px;
+        overflow: scroll;
+        transition: all 0.3s linear;
+        transform: translate(100%);
+    }
+}
+
+.show-cart {
+    transform: translate(0);
+}

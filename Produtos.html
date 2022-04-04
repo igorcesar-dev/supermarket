@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/produtos.css">
+    <link rel="stylesheet" href="assets/css/carrinho.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="/" class="logo" alt="LOGO">
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="Produtos.html">Produtos</a>
+                </li>
+                <li>
+                    <a class="btn-hide" href="#">Carrinho</a>
+                </li>
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <section class="container">
+        <!-- Janela dos produtos -->
+        <div class="box-container">
+            <div id="produtos"></div>
+            
+            <!-- Janela do carrinho -->
+            <div class="box-carrinho">
+                <div class="title-shopping-cart">
+                    <h1>Carrinho</h1>
+                    <div class="head">
+                        <h2>Produto</h2>
+                        <h2>Quantidade</h2>
+                        <h2>Preço</h2>
+                    </div>
+                    <hr>
+                    <!-- Produtos do carrinho -->
+                    <div id="carrinho">
+                        
+                    </div>
+
+                    <!-- Valor total do carrinho -->
+                    <div id="total-carrinho"></div>
+                </div>
+            </div>
+    </section>
+
+    <script src="assets/js/carrinho.js"></script>
+    <script src="assets/js/produtos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

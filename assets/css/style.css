@@ -27,8 +27,15 @@ body {
     margin-top: 1em;
 }
 
+.logo {
+    width: 11em;
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .menu {
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 ul {

@@ -15,7 +15,7 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="/" class="logo" alt="LOGO">
+            <img src="assets/img/logo-ics.png" class="logo" alt="LOGO">
         </div>
 
         <!-- Menu -->
@@ -39,8 +39,10 @@
     <section class="container">
         <!-- Janela dos produtos -->
         <div class="box-container">
+            <input id="searchbar" onkeyup="procurarProduto()" type="text" name="search"
+                placeholder="Procurar produtos...">
             <div id="produtos"></div>
-            
+
             <!-- Janela do carrinho -->
             <div class="box-carrinho">
                 <div class="title-shopping-cart">
@@ -53,11 +55,19 @@
                     <hr>
                     <!-- Produtos do carrinho -->
                     <div id="carrinho">
-                        
+
                     </div>
 
                     <!-- Valor total do carrinho -->
-                    <div id="total-carrinho"></div>
+                    <div class="subtotal-carrinho">
+                        <button class="btn-fimcompra">Finalizar compra</button>
+                        <p>Subtotal: </p>
+
+                        <div id="total-carrinho">
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
     </section>

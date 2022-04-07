@@ -1,3 +1,4 @@
+/* Exibição dos produtos na tela */
 #produtos {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -9,6 +10,7 @@
     margin-left: 5.5em;
 }
 
+/* Caixa que exibe os produtos */
 .box-product {
     width: 10em;
     height: 15em;
@@ -77,6 +79,7 @@
     top: 1px;
 }
 
+/* Barra de pesquisa */
 #searchbar {
     width: 40em;
     height: 3em;
@@ -87,4 +90,29 @@
     border-radius:0.5em;
     padding: 1em;
     font-size: 1em;
+}
+
+/* Botão para abrir o carrinho */
+.button-cart {
+    width: 4em;
+    height: 4em;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    background-color: #FFF;
+    border: solid 1px;
+    border-radius: 100%;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.button-cart:hover {
+    background-color: #1abaf5;
+}
+
+.img-carrinho {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    margin: 1em auto 0em auto;
 }

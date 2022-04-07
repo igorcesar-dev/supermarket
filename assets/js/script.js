@@ -37,12 +37,14 @@ function atualizarCarrinho() {
                 <div class="preco-cart">
                     <p>R$<span class="valor-item">`+ (valor.preco * valor.quantidade).toFixed(2) + `</span></p>
                 </div>
-                <div id="`+ valor.id + `"</div>
+                <button class="btn-removerproduto">Excluir</button>
             </div>
         `;
         }
     })
 }
+
+
 
 var links = document.getElementsByClassName('btn-product');
 
@@ -55,6 +57,7 @@ for (var i = 0; i < links.length; i++) {
     })
 }
 
+// Procurando o produto;
 function procurarProduto() {
     let input = document.getElementById('searchbar').value;
     input = input.toLowerCase();
@@ -72,16 +75,12 @@ function procurarProduto() {
 
 function totalCarrinho() {
     let todosValores = document.querySelectorAll('.valor-item');
-
     let total = 0;
 
     for (let i = 0; i < todosValores.length; i++) {
         let valor = Number(todosValores[i].textContent);
         total = total + valor;
     }
-
-
-    //
 
        var containerTotal = document.getElementById('total-carrinho');
        containerTotal.innerHTML = "";

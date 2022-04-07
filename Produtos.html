@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
+    <link rel="shortcut icon" href="assets/img/shopping-cart-fav.png" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/produtos.css">
@@ -37,14 +38,21 @@
         </div>
     </aside>
     <section class="container">
+
         <!-- Janela dos produtos -->
         <div class="box-container">
             <input id="searchbar" onkeyup="procurarProduto()" type="text" name="search"
-                placeholder="Procurar produtos...">
+                placeholder="Procurar produtos">
             <div id="produtos"></div>
+
+            <!-- Botão do carrinho -->
+            <div class="button-cart">
+                <img class="img-carrinho" src="assets/img/shopping-cart.png" alt="">
+            </div>
 
             <!-- Janela do carrinho -->
             <div class="box-carrinho">
+                <button class="close-btn">X</button>
                 <div class="title-shopping-cart">
                     <h1>Carrinho</h1>
                     <div class="head">
@@ -53,24 +61,31 @@
                         <h2>Preço</h2>
                     </div>
                     <hr>
-                    <!-- Produtos do carrinho -->
-                    <div id="carrinho">
 
-                    </div>
+                    <!-- Produtos do carrinho -->
+                    <div id="carrinho"></div>
 
                     <!-- Valor total do carrinho -->
                     <div class="subtotal-carrinho">
                         <button class="btn-fimcompra">Finalizar compra</button>
                         <p>Subtotal: </p>
-
-                        <div id="total-carrinho">
-
-
-                        </div>
+                        <div id="total-carrinho"></div>
                     </div>
                 </div>
             </div>
     </section>
+
+<!-- Janela de compra finalizada -->
+    <div class="compraFinalizada-fundo">
+        <div class="compraFinalizada-container">
+            <a class="btn-reset" href="index.html">X</a>
+            <img class="img-check" src="assets/img/check.png" alt="check">
+            <h3 class="title-check"> Compra finalizada! </h3>
+            <div class="btn-class">
+                
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/carrinho.js"></script>
     <script src="assets/js/produtos.js"></script>

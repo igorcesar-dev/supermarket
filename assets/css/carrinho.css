@@ -83,14 +83,6 @@
     justify-content: center;
 }
 
-.btn-removerproduto {
-    width: 6em;
-    height: 4em;
-    margin-top: auto;
-    margin-bottom: auto;
-    cursor: pointer;
-}
-
 /* Janela de subtotal do carrinho */
 .subtotal-carrinho {
     position: fixed;
@@ -116,7 +108,7 @@
     align-items: center;
     margin-right: auto;
     font-size: 14px;
-    color: #000000;
+    color: #fff;
     font-weight: bold;
     background-image: -webkit-linear-gradient(top, #4085c5, #0c7ee9);
     border-radius: 8px;

@@ -60,11 +60,11 @@
     margin-right: auto;
     margin-top: 0.5em;
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     background-image: -webkit-linear-gradient(top, #4085c5, #0c7ee9);
     border-radius: 8px;
-    box-shadow: 1px 1px 16px 0 #000000;
+    box-shadow: 1px 1px 9px 0 #000000;
     border: solid #000000 1px;
     cursor: pointer;
 }

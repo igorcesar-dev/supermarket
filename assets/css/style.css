@@ -13,7 +13,7 @@ body {
     position: fixed;
     width: 12.5em;
     height: 100vh;
-    background-image: -webkit-linear-gradient(top, #4687c4, #071829);
+    background-image: -webkit-linear-gradient(top, #4687c4, #0f3a64);
 }
 
 .nav {
@@ -54,7 +54,7 @@ a {
 }
 
 a:hover {
-    color: #49a6e9;
+    color: #252121;
     transition: ease-in-out 0.2s;
 }
 

@@ -7,7 +7,7 @@ Este projeto foi solicitado pelo professor de linguagem de programação no curs
 ## Funcionamento do projeto:
 
 <p align="left">
-  <img width="1280px" src="assets/img/project1.gif">
+  <img width="2040px" src="assets/img/project1.gif">
 </p>
 
 <p align="left">

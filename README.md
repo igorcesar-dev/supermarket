@@ -7,19 +7,19 @@ Este projeto foi solicitado pelo professor de linguagem de programação no curs
 ## Funcionamento do projeto:
 
 <p align="left">
-  <img width="2040px" src="assets/img/project1.gif">
+  <img width="1280px" src="assets/img/project1.gif">
 </p>
 
 <p align="left">
-  <img width="800px" src="assets/img/project2.gif">
+  <img width="1280px" src="assets/img/project2.gif">
 </p>
 
 <p align="left">
-  <img width="800px" src="assets/img/project3.gif">
+  <img width="1280px" src="assets/img/project3.gif">
 </p>
 
 <p align="left">
-  <img width="800px" src="assets/img/project4.gif">
+  <img width="1280px" src="assets/img/project4.gif">
 </p>
 
 ## Conceitos tratados:

@@ -6,19 +6,19 @@ Este projeto foi solicitado pelo professor de linguagem de programação no curs
 
 ## Funcionamento do projeto:
 
-<p align="center">
+<p align="left">
   <img width="800px" src="assets/img/project1.gif">
 </p>
 
-<p align="center">
+<p align="left">
   <img width="800px" src="assets/img/project2.gif">
 </p>
 
-<p align="center">
+<p align="left">
   <img width="800px" src="assets/img/project3.gif">
 </p>
 
-<p align="center">
+<p align="left">
   <img width="800px" src="assets/img/project4.gif">
 </p>
 

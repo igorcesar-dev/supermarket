@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const connection = require("./db/database");
 const Cliente = require("./models/Cliente");
 
+const product = require("./routes/produto");
+
 //database
 connection
     .authenticate()
@@ -26,6 +28,8 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+
+app.use("/", product);
 
 
 

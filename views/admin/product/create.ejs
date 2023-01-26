@@ -1,0 +1,55 @@
+<%- include('../../partials/header.ejs') %>
+    <%- include('../../partials/navbar.ejs') %>
+
+        <section class="container">
+
+            <!-- Janela dos produtos -->
+            <div class="box-container">
+                <input id="searchbar" onkeyup="procurarProduto()" type="text" name="search"
+                    placeholder="Procurar produtos">
+                <div id="produtos"></div>
+
+                <!-- Botão do carrinho -->
+                <div class="button-cart">
+                    <img class="img-carrinho" src="assets/img/shopping-cart.png" alt="">
+                </div>
+
+
+                <!-- Janela do carrinho -->
+                <div class="box-carrinho">
+                    <img class="close-btn" src="assets/img/close.png" alt="close">
+                    <div class="title-shopping-cart">
+                        <h1>Carrinho</h1>
+                        <div class="head">
+                            <h2>Produto</h2>
+                            <h2>Quantidade</h2>
+                            <h2>Preço</h2>
+                        </div>
+                        <hr>
+
+                        <!-- Produtos do carrinho -->
+                        <div id="carrinho"></div>
+
+                        <!-- Valor total do carrinho -->
+                        <div class="subtotal-carrinho">
+                            <button class="btn-fimcompra">Finalizar compra</button>
+                            <p>Subtotal: </p>
+                            <div id="total-carrinho"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Janela de compra finalizada -->
+        <div class="compraFinalizada-fundo">
+            <div class="compraFinalizada-container">
+                <a href="index.html"><img class="btn-reset" src="assets/img/close.png" alt=""></a>
+                <img class="img-check" src="assets/img/check.png" alt="check">
+                <h3 class="title-check"> Compra finalizada! </h3>
+                <div class="btn-class">
+
+                </div>
+            </div>
+        </div>
+
+        <%- include('../../partials/footer.ejs') %>

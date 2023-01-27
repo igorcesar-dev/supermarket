@@ -1,14 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const Produto = require("../models/Produto");
+const Produto = require("../models/Product");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
 
-//router to create a new product;
+//button with router to  create a new product;
 router.get("/admin/produto/novo", (req, res) => {
     res.render("admin/product/create")
 });
+
+router.post("/produto/save", (req, res) => {
+    let 
+})
 
 //router to get all products;
 router.get("/admin/produtos", (req, res) => {

@@ -1,41 +1,43 @@
 <%- include('../../partials/header.ejs') %>
     <%- include('../../partials/navbar.ejs') %>
 
-        <form action="">
-            <div class="card form-create" >
+        <form action="/produto/save" method="post">
+            <div class="card form-create">
                 <div class="card-body">
                     <h1 class="card-title">Cadastro de produtos</h1>
                     <hr>
                     <div class="div-grid">
                         <div class="boxes">
                             <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome-produto"
+                            <input type="text" name="nome" class="form-control" id="nome-produto"
                                 placeholder="Insira o nome do produto">
                         </div>
                         <div class="boxes">
                             <label for="price" class="form-label">Preço</label>
-                            <input type="text" class="form-control" id="preco-produto"
+                            <input type="text" name="preco" class="form-control" id="preco-produto"
                                 placeholder="Insira o preço do produto">
                         </div>
                         <div class="boxes">
                             <label for="description" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricao-produto" rows="2" placeholder="Insira uma descrição sobre o produto"></textarea>
+                            <textarea class="form-control" name="descricao" id="descricao-produto" rows="2"
+                                placeholder="Insira uma descrição sobre o produto"></textarea>
                         </div>
                         <div class="boxes">
                             <label for="quantity" class="form-label">Quantidade</label>
-                            <input type="number" class="form-control" id="quantidade-produto" placeholder="Insira a quantidade">
+                            <input type="number" name="quantidade" class="form-control" id="quantidade-produto"
+                                placeholder="Insira a quantidade">
                         </div>
                         <div class="boxes">
                             <label for="reference" class="form-label">Referência</label>
-                            <input type="number" class="form-control" id="referencia-produto"
-                                placeholder="name@example.com">
+                            <input type="number" name="referencia" class="form-control" id="referencia-produto"
+                                placeholder="Insira a referência do produto">
                         </div>
                         <div class="boxes">
                             <label for="exampleFormControlTextarea1" class="form-label">Categoria</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <input name="categoria" type="text" class="form-control" id="categoria">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success" style="width: 10rem;">Criar</button>
+                    <button type="submit" class="btn btn-success" style="width: 10rem;">Criar</button>
                 </div>
             </div>
         </form>

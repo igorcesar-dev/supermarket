@@ -33,3 +33,5 @@ const Produto = connection.define("produto", {
 Produto.sync({force: false}).then(() => {
     console.log("Tabela cliente criada com sucesso!")
 })
+
+module.exports = Produto;

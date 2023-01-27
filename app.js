@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const connection = require("./db/database");
 const Cliente = require("./models/Cliente");
 
-const product = require("./routes/produto");
+const productController = require("./routes/product");
+
+const Product = require("./models/Product")
 
 //database
 connection
@@ -24,13 +26,13 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.use("/", productController);
+
+
+
 app.get("/", (req, res) => {
     res.render("index");
 });
-
-
-app.use("/", product);
-
 
 
 app.listen(8080, () => {

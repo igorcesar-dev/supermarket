@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Produto = require("../models/Product");
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
 
 //button with router to  create a new product;
 router.get("/admin/produto/novo", (req, res) => {
@@ -11,12 +10,46 @@ router.get("/admin/produto/novo", (req, res) => {
 });
 
 router.post("/produto/save", (req, res) => {
-    let 
-})
+    let { nome, preco, descricao, quantidade, referencia, categoria } = req.body;
+
+    Produto.create({
+        nome: nome,
+        preco: preco,
+        descricao: descricao,
+        quantidade: quantidade,
+        referencia: referencia,
+        categoria: categoria
+    })
+        .then(() => res.render('admin/product/confirm'))
+});
 
 //router to get all products;
 router.get("/admin/produtos", (req, res) => {
-    res.render("admin/product/products")
+    let search = req.query.produto;
+    let query = '%' + search + '%';
+
+    if (!search) {
+        Produto.findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        }).then(produtos => {
+            res.render("admin/product/products", {
+                produtos
+            });
+        }).catch(err => console.log(err));
+    } else {
+        Produto.findAll({
+            where: { nome: { [Op.like]: query } },
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        }).then(produtos => {
+            res.render("admin/product/products", {
+                produtos, search
+            })
+        })
+    }
 });
 
 //route to get produto with id;

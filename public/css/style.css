@@ -17,3 +17,17 @@
     text-align: center;
 }
 
+.form-create {
+    width: 90%;
+    margin: 5rem 0rem 0rem 5rem;
+}
+
+.div-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.boxes {
+    width: 100%;
+    padding: 1rem;
+}

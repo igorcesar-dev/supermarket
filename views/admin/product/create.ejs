@@ -1,55 +1,43 @@
 <%- include('../../partials/header.ejs') %>
     <%- include('../../partials/navbar.ejs') %>
 
-        <section class="container">
-
-            <!-- Janela dos produtos -->
-            <div class="box-container">
-                <input id="searchbar" onkeyup="procurarProduto()" type="text" name="search"
-                    placeholder="Procurar produtos">
-                <div id="produtos"></div>
-
-                <!-- Botão do carrinho -->
-                <div class="button-cart">
-                    <img class="img-carrinho" src="assets/img/shopping-cart.png" alt="">
-                </div>
-
-
-                <!-- Janela do carrinho -->
-                <div class="box-carrinho">
-                    <img class="close-btn" src="assets/img/close.png" alt="close">
-                    <div class="title-shopping-cart">
-                        <h1>Carrinho</h1>
-                        <div class="head">
-                            <h2>Produto</h2>
-                            <h2>Quantidade</h2>
-                            <h2>Preço</h2>
+        <form action="">
+            <div class="card form-create" >
+                <div class="card-body">
+                    <h1 class="card-title">Cadastro de produtos</h1>
+                    <hr>
+                    <div class="div-grid">
+                        <div class="boxes">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome-produto"
+                                placeholder="Insira o nome do produto">
                         </div>
-                        <hr>
-
-                        <!-- Produtos do carrinho -->
-                        <div id="carrinho"></div>
-
-                        <!-- Valor total do carrinho -->
-                        <div class="subtotal-carrinho">
-                            <button class="btn-fimcompra">Finalizar compra</button>
-                            <p>Subtotal: </p>
-                            <div id="total-carrinho"></div>
+                        <div class="boxes">
+                            <label for="price" class="form-label">Preço</label>
+                            <input type="text" class="form-control" id="preco-produto"
+                                placeholder="Insira o preço do produto">
+                        </div>
+                        <div class="boxes">
+                            <label for="description" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="descricao-produto" rows="2" placeholder="Insira uma descrição sobre o produto"></textarea>
+                        </div>
+                        <div class="boxes">
+                            <label for="quantity" class="form-label">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade-produto" placeholder="Insira a quantidade">
+                        </div>
+                        <div class="boxes">
+                            <label for="reference" class="form-label">Referência</label>
+                            <input type="number" class="form-control" id="referencia-produto"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="boxes">
+                            <label for="exampleFormControlTextarea1" class="form-label">Categoria</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div>
-                </div>
-        </section>
-
-        <!-- Janela de compra finalizada -->
-        <div class="compraFinalizada-fundo">
-            <div class="compraFinalizada-container">
-                <a href="index.html"><img class="btn-reset" src="assets/img/close.png" alt=""></a>
-                <img class="img-check" src="assets/img/check.png" alt="check">
-                <h3 class="title-check"> Compra finalizada! </h3>
-                <div class="btn-class">
-
+                    <button type="button" class="btn btn-success" style="width: 10rem;">Criar</button>
                 </div>
             </div>
-        </div>
+        </form>
 
         <%- include('../../partials/footer.ejs') %>

@@ -12,7 +12,7 @@ router.get("/admin/produto/novo", (req, res) => {
 
 //router to get all products;
 router.get("/admin/produtos", (req, res) => {
-    res.send("rota de exibir todos os produtos")
+    res.render("admin/product/products")
 });
 
 //route to get produto with id;

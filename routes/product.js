@@ -53,13 +53,26 @@ router.get("/admin/produtos", (req, res) => {
 });
 
 //route to get produto with id;
-router.get("/admin/produtos/:id", (req, res) => {
+router.get("/admin/produtos/edit/:id", (req, res) => {
     res.send("rota de exibir um produto pelo id")
 });
 
 //route to exclude produto;
-router.get("/admin/produtos/excluir/:id", (req, res) => {
-    res.send("rota de excluir um produto")
+router.post("/admin/product/delete", (req, res) => {
+    let id = req.body.id;
+    if (id != undefined) {
+        if (!isNaN(id)) {
+            Produto.destroy({
+                where: { id: id }
+            }).then(() => {
+                res.redirect("/admin/produtos")
+            });
+        } else {
+            res.redirect("/admin/produtos")
+        }
+    } else {
+        res.redirect("/admin/produtos")
+    }
 });
 
 //route to update produto;

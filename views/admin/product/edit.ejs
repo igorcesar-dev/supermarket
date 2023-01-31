@@ -1,0 +1,46 @@
+<%- include('../../partials/header.ejs') %>
+    <%- include('../../partials/navbar.ejs') %>
+
+        <form action="/produto/edit" method="post">
+            <div class="card form-create">
+                <div class="card-body">
+                    <h1 class="card-title">Editar produto</h1>
+                    <hr>
+                    <div class="div-grid">
+                        <div class="boxes">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" name="nome" class="form-control" id="nome-produto"
+                                value="<%= produto.nome %>">
+                        </div>
+                        <div class="boxes">
+                            <label for="price" class="form-label">Preço</label>
+                            <input type="text" name="preco" class="form-control" id="preco-produto"
+                            value="<%= produto.preco %>">
+                        </div>
+                        <div class="boxes">
+                            <label for="description" class="form-label">Descrição</label>
+                            <textarea class="form-control" name="descricao" id="descricao-produto" rows="2"
+                            value="<%= produto.descricao %>"></textarea>
+                        </div>
+                        <div class="boxes">
+                            <label for="quantity" class="form-label">Quantidade</label>
+                            <input type="number" name="quantidade" class="form-control" id="quantidade-produto"
+                            value="<%= produto.quantidade %>">
+                        </div>
+                        <div class="boxes">
+                            <label for="reference" class="form-label">Referência</label>
+                            <input type="number" name="referencia" class="form-control" id="referencia-produto"
+                            value="<%= produto.referencia%>">
+                        </div>
+                        <div class="boxes">
+                            <label for="exampleFormControlTextarea1" class="form-label">Categoria</label>
+                            <input name="categoria" type="text" class="form-control" id="categoria"
+                            value="<%= produto.categoria %>">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 10rem;">Criar</button>
+                </div>
+            </div>
+        </form>
+
+        <%- include('../../partials/footer.ejs') %>

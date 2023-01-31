@@ -53,9 +53,21 @@ router.get("/admin/produtos", (req, res) => {
 });
 
 //route to get produto with id;
-router.get("/admin/produtos/edit/:id", (req, res) => {
-    res.send("rota de exibir um produto pelo id")
-});
+router.get("/admin/produto/edit/:id", (req, res) => {
+        let id = req.params.id;
+    
+        Produto.findByPk(id).then(produto => {
+            if(produto != undefined) {
+                Produto.findAll().then(produtos => {
+                    res.render("admin/product/edit", { produto: produto });
+                })
+            }else {
+                res.redirect("/admin/produtos");
+            }
+        }).catch(err => {
+            res.redirect("/admin/produtos");
+        })
+    })
 
 //route to exclude produto;
 router.post("/admin/product/delete", (req, res) => {

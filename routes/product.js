@@ -92,4 +92,29 @@ router.get("/admin/produtos/atualizar/:id", (req, res) => {
     res.send("rota de atualizar um produto")
 });
 
+router.post("/produto/atualizar/:id", (req, res) => {
+    let id = req.body.id;
+    let nome = req.body.nome;
+    let preco = req.body.preco;
+    let descricao = req.body.descricao;
+    let quantidade = req.body.quantidade;
+    let referencia = req.body.referencia;
+    let categoria = req.body.categoria;
+
+    Produto.update({
+        nome: nome,
+        preco: preco,
+        descricao: descricao,
+        quantidade: quantidade,
+        referencia: referencia,
+        categoria: categoria
+    }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.redirect("/admin/produtos")
+    })
+})
+
 module.exports = router;

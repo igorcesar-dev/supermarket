@@ -5,6 +5,7 @@ const connection = require("./db/database");
 const Cliente = require("./models/Cliente");
 
 const productController = require("./routes/product");
+const storeController = require("./routes/store");
 
 const Product = require("./models/Product")
 
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use("/", productController);
+app.use("/", storeController);
 
 
 

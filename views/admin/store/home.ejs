@@ -1,0 +1,34 @@
+<%- include('../../partials/headerstore.ejs') %>
+    <%- include('../../partials/navstore.ejs') %>
+
+        <body>
+            <div class="card mt-4" style="width: 100%;height: 50vh;border: none;">
+                <img src="/img/home.jpg" alt="home-img" style="height: 50vh;filter: brightness(80%);">
+            </div>
+            <div class="container text-center mt-5">
+                <div class="row row-cols-4 gap-3">
+                    <% produtos.forEach(produto=> { %>
+
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= produto.nome %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= produto.preco %>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= produto.descricao %>
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </body>
+
+        <%- include('../../partials/footerstore.ejs') %>

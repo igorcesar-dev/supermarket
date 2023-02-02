@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Closeup detail of a woman shopping in a supermarket</caption>
+  <note>Closeup detail of a woman shopping in a supermarket</note>
+  <place/>
+  <categories>
+    <category value="interior"/>
+    <category value="aisle"/>
+    <category value="woman"/>
+    <category value="trolley"/>
+    <category value="supermarket"/>
+    <category value="store"/>
+    <category value="shopping"/>
+    <category value="shop"/>
+    <category value="shelf"/>
+    <category value="run"/>
+    <category value="retail"/>
+    <category value="market"/>
+    <category value="lifestyle"/>
+    <category value="american"/>
+    <category value="hand"/>
+    <category value="commerce"/>
+    <category value="basket"/>
+    <category value="buy"/>
+    <category value="buyer"/>
+    <category value="cart"/>
+    <category value="closeup"/>
+    <category value="grocery"/>
+    <category value="consumer"/>
+    <category value="customer"/>
+    <category value="department"/>
+    <category value="detail"/>
+    <category value="discount"/>
+    <category value="enhancement"/>
+    <category value="food"/>
+    <category value="goods"/>
+  </categories>
+</comment>

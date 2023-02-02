@@ -1,0 +1,149 @@
+<%- include('../../partials/storeheader.ejs') %>
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" style="filter: brightness(70%)" src="images/banner.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <span>Seja bem-vindo(a)</span>
+                            <h1>Conheça os nossos produtos</h1>
+                            <p>Entregamos em todo o Nordeste! Tenha conforto e comodidade.
+                                <br>Compra 100% segura
+                            </p>
+                            <a class="buynow" href="#">Compre agora</a>
+                            <ul class="social_icon">
+                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" style="filter: brightness(70%)" src="images/banner.jpg"
+                        alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <span>Saldão de verão!</span>
+                            <h1>Produtos com 25% de desconto!!</h1>
+                            <p>Aproveite as promoções!</p>
+                            <a class="buynow" href="#">Comprar agora</a>
+                            <ul class="social_icon">
+                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="images/about.png" alt="img" /></figure>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_box">
+                        <h3>Sobre nós</h3>
+                        <span>Somos um supermercado online!</span>
+                        <p>Visando melhorar a experiência dos nossos clientes, criamos o Supermercado ICS online, onde
+                            iremos proporcionar facilidade e comodidade aos nossos clientes, garantindo a compra de seus
+                            produtos de qualquer lugar!</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+
+    <!-- brand -->
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Nossos produtos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brand-bg">
+
+            <div class="container">
+
+                <div class="row">
+                    <% produtos.forEach(produto=> { %>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                            <div class="brand_box">
+                                <img src="images/1.png" alt="img" />
+                                <h3>R$<strong class="red">
+                                        <%= produto.preco %>
+                                    </strong></h3>
+                                <span>
+                                    <%= produto.nome %>
+                                </span>
+                                <i><img src="images/star.png" /></i>
+                                <i><img src="images/star.png" /></i>
+                                <i><img src="images/star.png" /></i>
+                                <i><img src="images/star.png" /></i>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <div class="col-md-12">
+                                <a class="read-more">Ver mais</a>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end brand -->
+
+    <!-- contact -->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Entre em contato!</h2>
+                    </div>
+                    <form class="main_form">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Your name" type="text" name="Insira seu nome">
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Email" type="text" name="Insira seu email">
+                            </div>
+                            <div class=" col-md-12">
+                                <input class="form-control" placeholder="Phone" type="text" name="Insira seu telefone">
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="textarea" placeholder="Insira a sua mensagem"></textarea>
+                            </div>
+                            <div class=" col-md-12">
+                                <button class="send">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+    <%- include('../../partials/storefooter.ejs') %>

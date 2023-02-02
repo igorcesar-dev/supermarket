@@ -26,6 +26,9 @@ const Produto = connection.define("produto", {
     categoria:{
         type: Sequelize.STRING,
         allowNull: false
+    },
+    image: {
+        type: Sequelize.STRING
     }
 })
 

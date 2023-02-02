@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Produto = require("../models/Product");
 const Sequelize = require('sequelize');
+
 const Op = Sequelize.Op;
 
 //button with router to  create a new product;

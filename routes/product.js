@@ -11,7 +11,7 @@ router.get("/admin/produto/novo", (req, res) => {
 });
 
 router.post("/produto/save", (req, res) => {
-    let { nome, preco, descricao, quantidade, referencia, categoria } = req.body;
+    let { nome, preco, descricao, quantidade, referencia, categoria, imagem } = req.body;
 
     Produto.create({
         nome: nome,
@@ -19,7 +19,8 @@ router.post("/produto/save", (req, res) => {
         descricao: descricao,
         quantidade: quantidade,
         referencia: referencia,
-        categoria: categoria
+        categoria: categoria,
+        imagem: imagem
     })
         .then(() => res.render('admin/product/confirm'))
 });
@@ -101,6 +102,7 @@ router.post("/produto/atualizar/:id", (req, res) => {
     let quantidade = req.body.quantidade;
     let referencia = req.body.referencia;
     let categoria = req.body.categoria;
+    let imagem = req.body.imagem;
 
     Produto.update({
         nome: nome,
@@ -108,7 +110,8 @@ router.post("/produto/atualizar/:id", (req, res) => {
         descricao: descricao,
         quantidade: quantidade,
         referencia: referencia,
-        categoria: categoria
+        categoria: categoria,
+        imagem: imagem
     }, {
         where: {
             id: id

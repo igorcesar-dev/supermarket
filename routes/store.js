@@ -14,7 +14,7 @@ router.get("/home", (req, res) => {
                 ['createdAt', 'DESC']
             ]
         }).then(produtos => {
-            res.render("admin/pages/index", {
+            res.render("admin/pages/home", {
                 produtos
             });
         }).catch(err => console.log(err));
@@ -25,7 +25,7 @@ router.get("/home", (req, res) => {
                 ['createdAt', 'DESC']
             ]
         }).then(produtos => {
-            res.render("admin/pages/index", {
+            res.render("admin/pages/home", {
                 produtos, search
             })
         })

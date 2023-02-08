@@ -2,39 +2,39 @@ const Sequelize = require("sequelize");
 const connection = require("../db/database");
 
 
-const Produto = connection.define("produto", {
-    nome:{
+const Product = connection.define("product", {
+    name:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    preco:{
+    price:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    descricao:{
+    description:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    quantidade:{
+    quantity:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    referencia:{
+    reference:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    categoria:{
+    category:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    imagem:{
+    image:{
         type: Sequelize.STRING
     }
 })
 
 
-Produto.sync({force: false}).then(() => {
-    console.log("Tabela cliente criada com sucesso!")
+Product.sync({force: false}).then(() => {
+    console.log("Product table successfully created!")
 })
 
-module.exports = Produto;
+module.exports = Product;

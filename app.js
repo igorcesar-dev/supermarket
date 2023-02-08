@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./db/database");
-const Cliente = require("./models/Cliente");
 
 const productController = require("./routes/product");
 const storeController = require("./routes/store");

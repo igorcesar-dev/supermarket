@@ -11,16 +11,16 @@ router.get("/admin/produto/novo", (req, res) => {
 });
 
 router.post("/produto/save", (req, res) => {
-    let { nome, preco, descricao, quantidade, referencia, categoria, imagem } = req.body;
+    let { name, price, description, quantity, reference, category, image } = req.body;
 
     Produto.create({
-        nome: nome,
-        preco: preco,
-        descricao: descricao,
-        quantidade: quantidade,
-        referencia: referencia,
-        categoria: categoria,
-        imagem: imagem
+        name: name,
+        price: price,
+        description: description,
+        quantity: quantity,
+        reference: reference,
+        category: category,
+        image: image
     })
         .then(() => res.render('admin/product/confirm'))
 });
@@ -42,7 +42,7 @@ router.get("/admin/produtos", (req, res) => {
         }).catch(err => console.log(err));
     } else {
         Produto.findAll({
-            where: { nome: { [Op.like]: query } },
+            where: { name: { [Op.like]: query } },
             order: [
                 ['createdAt', 'DESC']
             ]
@@ -96,22 +96,22 @@ router.get("/admin/produtos/atualizar/:id", (req, res) => {
 
 router.post("/produto/atualizar/:id", (req, res) => {
     let id = req.body.id;
-    let nome = req.body.nome;
-    let preco = req.body.preco;
-    let descricao = req.body.descricao;
-    let quantidade = req.body.quantidade;
-    let referencia = req.body.referencia;
-    let categoria = req.body.categoria;
-    let imagem = req.body.imagem;
+    let name = req.body.name;
+    let price = req.body.price;
+    let description = req.body.description;
+    let quantity = req.body.quantity;
+    let reference = req.body.reference;
+    let category = req.body.category;
+    let image = req.body.image;
 
     Produto.update({
-        nome: nome,
-        preco: preco,
-        descricao: descricao,
-        quantidade: quantidade,
-        referencia: referencia,
-        categoria: categoria,
-        imagem: imagem
+        name: name,
+        price: price,
+        description: description,
+        quantity: quantity,
+        reference: reference,
+        category: category,
+        image: image
     }, {
         where: {
             id: id

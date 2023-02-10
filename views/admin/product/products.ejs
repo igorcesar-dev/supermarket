@@ -29,19 +29,19 @@
                     <% produtos.forEach(produto=> { %>
                         <tr>
                             <td>
-                                <%= produto.nome %>
+                                <%= produto.name %>
                             </td>
                             <td>
-                                R$ <%= produto.preco %>
+                                R$ <%= produto.price %>
                             </td>
                             <td>
-                                <%= produto.quantidade %> unidades
+                                <%= produto.quantity %> unidades
                             </td>
                             <td>
-                                <%= produto.referencia %>
+                                <%= produto.reference %>
                             </td>
                             <td>
-                                <%= produto.categoria%>
+                                <%= produto.category%>
                             </td>
                             <th>
                                 <a class="btn btn-warning" href="/admin/produto/edit/<%= produto.id %>">Editar</a>

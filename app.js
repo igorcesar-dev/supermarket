@@ -5,8 +5,10 @@ const connection = require("./db/database");
 
 const productController = require("./routes/product");
 const storeController = require("./routes/store");
+const cartController = require("./routes/shoppingCart");
 
 const Product = require("./models/Product")
+const Cart = require("./models/Cart")
 
 //database
 connection
@@ -28,6 +30,7 @@ app.use(bodyParser.json());
 
 app.use("/", productController);
 app.use("/", storeController);
+app.use("/", cartController);
 
 
 

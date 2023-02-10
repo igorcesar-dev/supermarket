@@ -29,4 +29,4 @@ Cart.sync({force: false}).then(() => {
     console.log("Cart table successfully created!")
 })
 
-module.exports = Produto;
+module.exports = Cart;

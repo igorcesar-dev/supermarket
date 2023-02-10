@@ -4,8 +4,8 @@ const Produto = require("../models/Product");
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-
-
 router.get("/shopping-cart", (req, res) => {
     res.render("admin/pages/cart")
 })
+
+module.exports = router;

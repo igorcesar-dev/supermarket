@@ -39,16 +39,16 @@
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="images/<%= produto.imagem %>" alt="<%= produto.nome %>" class="img-fluid" />
+                  <img style="width: 12em;margin-top: 1em;" src="images/<%= produto.image %>" alt="<%= produto.name %>" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                   </a>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">
-                    <%= produto.nome %>
+                    <%= produto.name %>
                   </h5>
-                  <h6> R$<%= produto.preco %>
+                  <h6> R$<%= produto.price %>
                   </h6>
                   <a href="#!" class="btn btn-primary">Adicionar ao carrinho</a>
                 </div>

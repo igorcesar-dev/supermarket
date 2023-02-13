@@ -34,27 +34,49 @@
       </nav>
       <section class="text-center mb-4">
         <div class="row">
-          <% produtos.forEach(produto=> { %>
 
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img style="width: 12em;margin-top: 1em;" src="images/<%= produto.image %>" alt="<%= produto.name %>" class="img-fluid" />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
+          <% produtos.forEach(produto=> { %>
+            <form action="/add-cart/<%= produto.id %>" method="post">
+
+                <input type="hidden" name="productImage" class="form-control" id="imagem-produto" value="<%= produto.image%>">
+
+                <input type="hidden" name="productName" class="form-control" id="nome-produto" value="<%= produto.name%>">
+
+                <input type="hidden" name="productPrice" class="form-control" id="preco-produto" value="<%= produto.price%>">
+
+                <input type="hidden" name="productDescription" id="descricao-produto" value="<%= produto.description%>">
+
+                <input type="hidden" name="productReference" class="form-control" id="referencia-produto" value="<%= produto.reference%>">
+
+                <input name="productCategory" type="hidden" class="form-control" id="categoria" value="<%= produto.category%>">
+
+                <div class="col-lg-4 col-md-12 mb-4">
+                  <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                      <img style="width: 12em;margin-top: 1em;" src="images/<%= produto.image %>" alt="<%= produto.name %>"
+                        class="img-fluid" />
+                      <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <%= produto.name %>
+                      </h5>
+                      <h6> R$<%= produto.price %>
+                      </h6>
+                      <button type="submit" class="btn btn-primary">Adicionar ao carrinho</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <%= produto.name %>
-                  </h5>
-                  <h6> R$<%= produto.price %>
-                  </h6>
-                  <a href="#!" class="btn btn-primary">Adicionar ao carrinho</a>
-                </div>
-              </div>
-            </div>
-            <% }) %>
+                <% }) %>
+
+              </form>
+
+
+
+            </form>
+        
 
               <nav aria-label="...">
                 <ul class="pagination pagination-circle d-flex justify-content-center">

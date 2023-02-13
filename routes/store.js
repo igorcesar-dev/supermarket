@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Produto = require("../models/Product");
+const Product = require("../models/Product");
+const Cart = require("../models/Cart");
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -9,7 +10,7 @@ router.get("/home", (req, res) => {
     let query = '%' + search + '%';
 
     if (!search) {
-        Produto.findAll({
+        Product.findAll({
             order: [
                 ['createdAt', 'DESC']
             ]
@@ -19,7 +20,7 @@ router.get("/home", (req, res) => {
             });
         }).catch(err => console.log(err));
     } else {
-        Produto.findAll({
+        Product.findAll({
             where: { nome: { [Op.like]: query } },
             order: [
                 ['createdAt', 'DESC']
@@ -30,6 +31,28 @@ router.get("/home", (req, res) => {
             })
         })
     }
+});
+
+router.post("/add-cart/:id", (req, res) => {
+    let { productName, productPrice, productDescription, productReference, productCategory, productImage } = req.body;
+
+    let id = req.body.id;
+
+
+    Cart.create({
+        productName: productName,
+        productPrice: productPrice,
+        productDescription: productDescription,
+        productReference: productReference,
+        productCategory: productCategory,
+        productImage: productImage
+    }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.render('admin/pages/confirm-cart');
+    });
 });
 
 module.exports = router;

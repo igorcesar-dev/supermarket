@@ -15,12 +15,16 @@ const Cart = connection.define("cart", {
         type: Sequelize.STRING,
         allowNull: false
     },
-    productQuantity:{
+    productImage:{
+        type: Sequelize.STRING
+    },
+    productReference:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    productImage:{
-        type: Sequelize.STRING
+    productCategory:{
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 

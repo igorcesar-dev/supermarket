@@ -10,6 +10,8 @@ const cartController = require("./routes/shoppingCart");
 const Product = require("./models/Product")
 const Cart = require("./models/Cart")
 
+
+
 //database
 connection
     .authenticate()
@@ -41,4 +43,4 @@ app.get("/", (req, res) => {
 
 app.listen(8080, () => {
     console.log("Supermaket rodando!")
-})
+});

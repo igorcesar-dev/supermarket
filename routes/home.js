@@ -35,10 +35,7 @@ router.get("/home", (req, res) => {
 
 router.post("/add-cart/:id", (req, res) => {
     let { productName, productPrice, productDescription, productReference, productCategory, productImage } = req.body;
-
     let id = req.body.id;
-
-
     Cart.create({
         productName: productName,
         productPrice: productPrice,
@@ -54,5 +51,10 @@ router.post("/add-cart/:id", (req, res) => {
         res.render('admin/pages/confirm-cart');
     });
 });
+
+router.get("/item", (req, res) => {
+    res.redirect("admin/pages/cart")
+});
+
 
 module.exports = router;

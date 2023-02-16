@@ -17,4 +17,15 @@ btns.forEach(function (btn) {
         }
         quantityInput.textContent = count;
     });
-})
+});
+
+
+function addCart(){
+    const btnCart = document.querySelector(".add-cart");
+
+    btnCart.addEventListener("click", function() {
+        alert("opa")
+    })
+}
+
+addCart();

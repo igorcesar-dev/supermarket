@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const connection = require("./db/database");
 
 const productController = require("./routes/product");
-const storeController = require("./routes/store");
+const homeController = require("./routes/home");
 const cartController = require("./routes/shoppingCart");
 
 const Product = require("./models/Product")
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use("/", productController);
-app.use("/", storeController);
+app.use("/", homeController);
 app.use("/", cartController);
 
 

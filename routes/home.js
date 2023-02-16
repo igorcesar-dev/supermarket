@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 router.get("/home", (req, res) => {
-    let search = req.query.produto;
+    let search = req.query.search;
     let query = '%' + search + '%';
 
     if (!search) {
@@ -21,12 +21,12 @@ router.get("/home", (req, res) => {
         }).catch(err => console.log(err));
     } else {
         Product.findAll({
-            where: { nome: { [Op.like]: query } },
+            where: { name: { [Op.like]: query } },
             order: [
                 ['createdAt', 'DESC']
             ]
         }).then(produtos => {
-            res.render("admin/pages/home", {
+            res.render("admin/pages/search", {
                 produtos, search
             })
         })

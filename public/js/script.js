@@ -22,10 +22,15 @@ btns.forEach(function (btn) {
 
 function addCart(){
     const btnCart = document.querySelector(".add-cart");
-
-    btnCart.addEventListener("click", function() {
-        alert("opa")
-    })
+    const quantityCart = document.getElementById("quantity-cart");
+    let countCart = 0;
+    btnCart.addEventListener("click", function(e) {
+        const stylesCart = e.currentTarget.classList;
+        if (stylesCart.contains("add-cart")){
+            countCart++;
+        }
+        quantityCart.textContent = countCart;
+    });
 }
 
 addCart();

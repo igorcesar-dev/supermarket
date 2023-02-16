@@ -1,79 +1,17 @@
 <%- include('../../partials/storeheader.ejs') %>
+  <!-- Background image -->
+  <div class="p-5 text-center bg-image shadow-1-strong">
+    
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="card">
 
-  <main class="mt-5">
-    <div class="container" style="height: 100vh;">
-      <section class="text-center mb-4">
-        <div class="row">
-          <% produtos.forEach(produto=> { %>
-            <div class="col-md-4">
-              <form style="width:100%" action="/add-cart/<%= produto.id %>" method="post">
-
-                <input type="hidden" name="productImage" class="form-control" id="imagem-produto"
-                  value="<%= produto.image%>">
-
-                <input type="hidden" name="productName" class="form-control" id="nome-produto"
-                  value="<%= produto.name%>">
-
-                <input type="hidden" name="productPrice" class="form-control" id="preco-produto"
-                  value="<%= produto.price%>">
-
-                <input type="hidden" name="productDescription" id="descricao-produto" value="<%= produto.description%>">
-
-                <input type="hidden" name="productReference" class="form-control" id="referencia-produto"
-                  value="<%= produto.reference%>">
-
-                <input name="productCategory" type="hidden" class="form-control" id="categoria"
-                  value="<%= produto.category%>">
-
-                <div class="mb-4">
-                  <div class="card">
-                    <div class="bg-image hover-overlay ripple" style="height: 13em;" data-mdb-ripple-color="light">
-                      <img style="width: 12em;margin-top: 1em;" src="images/<%= produto.image %>"
-                        alt="<%= produto.name %>" class="img-fluid" />
-                      <a href="#!">
-                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                      </a>
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <%= produto.name %>
-                      </h5>
-                      <h6> R$<%= produto.price %>
-                      </h6>
-                      <button type="submit" class="add-cart btn btn-primary">Adicionar ao carrinho</button>
-                    </div>
-                  </div>
-                </div>
-
-              </form>
-            </div>
-            <% }) %>
         </div>
-    </div>
+      </div>
 
-    <nav aria-label="...">
-      <ul class="pagination pagination-circle d-flex justify-content-center">
-        <li class="page-item">
-          <a class="page-link">Anterior</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active" aria-current="page">
-          <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Próximo</a>
-        </li>
-      </ul>
-    </nav>
-
-    </div>
-
-
-    </section>
-
-
-
-    </div>
+      </div>
+  </div>
+  <!-- Background image -->
+  <main class="mt-5">
+   
   </main>
   <%- include('../../partials/storefooter.ejs') %>

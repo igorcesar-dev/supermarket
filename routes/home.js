@@ -52,32 +52,15 @@ router.post("/add-cart/:id", (req, res) => {
     });
 });
 
-router.get('/item/:id', (req, res) => {
-    let search = req.query.search;
-    let query = '%' + search + '%';
-
-    if (!search) {
-        Product.findAll({
-            order: [
-                ['createdAt', 'DESC']
-            ]
-        }).then(produtos => {
-            res.render("admin/pages/search", {
-                produtos
-            });
-        }).catch(err => console.log(err));
-    } else {
-        Product.findAll({
-            where: { name: { [Op.like]: query } },
-            order: [
-                ['createdAt', 'DESC']
-            ]
-        }).then(produtos => {
-            res.render("admin/pages/search", {
-                produtos, search
-            })
+router.get('/item/:id', (req, res) => {    
+    Product.findAll({
+        where: { id: req.params.id }
+    }).then(itens => {
+        res.render("admin/pages/item", {
+            itens
         })
-    }
+    })
+
 });
 
 module.exports = router;

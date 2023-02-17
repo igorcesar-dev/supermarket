@@ -56,11 +56,17 @@ router.get('/item/:id', (req, res) => {
     Product.findAll({
         where: { id: req.params.id }
     }).then(itens => {
-        res.render("admin/pages/item", {
-            itens
-        })
-    })
-
+        Product.findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        }).then(products => {
+            res.render("admin/pages/item", {
+                itens, products
+            });
+        });
+    });
 });
+
 
 module.exports = router;

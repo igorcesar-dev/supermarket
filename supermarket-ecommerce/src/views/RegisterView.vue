@@ -6,7 +6,11 @@
           <div class="field">
             <label class="label">Nome</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Enter your name" />
+              <input
+                class="input"
+                type="text"
+                placeholder="Digite o nome do produto"
+              />
             </div>
           </div>
         </div>
@@ -14,82 +18,69 @@
         <div class="column is-6">
           <div class="field">
             <label class="label">Descrição</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input
-                class="input is-success"
+                class="input"
                 type="text"
-                placeholder="Enter your username"
+                placeholder="Digite uma descrição do produto"
               />
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
             </div>
           </div>
         </div>
 
         <div class="column is-one-quarter">
-          <div class="field ">
+          <div class="field">
             <label class="label">Preço</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input
-                class="input is-danger"
-                type="email"
-                placeholder="Enter your email"
+                class="input"
+                type="number"
+                placeholder="Digite o preço do produto"
               />
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
             </div>
           </div>
         </div>
-        
+
         <div class="column is-one-quarter">
-          <div class="field ">
+          <div class="field">
             <label class="label">Quantidade</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input
-                class="input is-danger"
-                type="password"
-                placeholder="Enter your password"
+                class="input"
+                type="nuber"
+                placeholder="Digite a quantidade de entrada"
               />
-              <span class="icon is-small is-left">
-                <i class="fas fa-key"></i>
-              </span>
             </div>
           </div>
         </div>
-      
+
         <div class="column is-one-quarter">
           <div class="field">
             <label class="label">Referência</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input
-                class="input is-danger"
-                type="password"
-                placeholder="Enter your password"
+                class="input"
+                type="number"
+                placeholder="Digite o código de referência do produto"
               />
-              <span class="icon is-small is-left">
-                <i class="fas fa-key"></i>
-              </span>
             </div>
           </div>
         </div>
-        
+
         <div class="column is-one-quarter">
           <div class="field">
             <label class="label"> Categoria </label>
             <div class="control">
               <div class="select">
                 <select>
-                  <option>Java</option>
-                  <option>C++</option>
-                  <option>Python</option>
+                  <option>Alimento</option>
+                  <option>Limpeza</option>
                 </select>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="field is-grouped column">
           <div class="control">
             <button class="button is-success">Sign up</button>
@@ -98,11 +89,9 @@
             <button class="button is-link is-light">Cancel</button>
           </div>
         </div>
-      
       </div>
     </form>
   </div>
-
 </template>
 
 <script>

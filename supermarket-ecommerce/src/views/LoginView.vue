@@ -33,7 +33,7 @@
 </template>
 
 <script>
-//import axios from "axios";
+import axios from "axios";
 export default {
   data() {
     return {
@@ -44,12 +44,12 @@ export default {
   },
   methods: {
     login() {
-      axios.post("http://localhost:8686/user", {
+      axios.post("http://localhost:8686/login", {
         email: this.email,
-        password: this.password,
-        name: this.name,
+        password: this.password
       }).then(res => {
         console.log(res);
+        localStorage.setItem('token', res.data.token);
         this.$router.push({name: 'Home'})
       }).catch(err => {
         var msgErro = err.response.data.err;

@@ -1,103 +1,71 @@
 <template>
-  <div class="container">
-    <h2>Cadastro de produto</h2>
-    <hr>
-      <div class="columns is-multiline is-mobile">
-        <div class="column is-5">
-          <div class="field">
-            <label class="label">Nome</label>
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="Digite o nome do produto"
-              />
-            </div>
-          </div>
-        </div>
+  <div>
+    <h2>Login de usuário</h2>
+    <hr />
 
-        <div class="column is-6">
-          <div class="field">
-            <label class="label">Descrição</label>
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="Digite uma descrição do produto"
-              />
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div v-if="error != undefined">
+            <div class="notification is-danger">
+                <p>{{error}}</p>
             </div>
-          </div>
         </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Preço</label>
-            <div class="control">
-              <input
-                class="input"
-                type="number"
-                placeholder="Digite o preço do produto"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Quantidade</label>
-            <div class="control">
-              <input
-                class="input"
-                type="nuber"
-                placeholder="Digite a quantidade de entrada"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Referência</label>
-            <div class="control">
-              <input
-                class="input"
-                type="number"
-                placeholder="Digite o código de referência do produto"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label"> Categoria </label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Alimento</option>
-                  <option>Limpeza</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-grouped column">
-          <div class="control">
-            <button class="button is-success">Sign up</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-          </div>
-        </div>
+        <p>Nome</p>
+        <input
+          type="text"
+          placeholder="Nome do usuário"
+          class="input"
+          v-model="name"
+        />
+        <p>E-mail</p>
+        <input
+          type="email"
+          placeholder="email@gmail.com"
+          class="input"
+          v-model="email"
+        />
+        <p>Senha</p>
+        <input
+          type="password"
+          placeholder="********"
+          class="input"
+          v-model="password"
+        />
+        <button @click="registerLogin" class="button is-success">
+          Acessar
+        </button>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
-//import AboutView from './AboutView.vue';
-//export default {
-//  components: { AboutView },};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      name: "",
+      password: "",
+      email: "",
+      error: undefined
+    };
+  },
+  methods: {
+    registerLogin() {
+      axios.post("http://localhost:8686/user", {
+        email: this.email,
+        password: this.password,
+        name: this.name,
+      }).then(res => {
+        console.log(res);
+        this.$router.push({name: 'Home'})
+      }).catch(err => {
+        var msgErro = err.response.data.err;
+        this.error = msgErro;
+      })
+    },
+  },
+};
 </script>
 
 <style>

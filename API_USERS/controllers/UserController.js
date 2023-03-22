@@ -28,7 +28,7 @@ class UserController {
   async create(req, res) {
     var { name, email, password } = req.body;
 
-    if (email == undefined) {
+    if (email == undefined || email == "" || email == " ") {
       res.status(400);
       res.json({ err: "O e-mail é inválido." });
       return;
@@ -123,9 +123,8 @@ class UserController {
 
     if (user != undefined) {
       var result = await bcrypt.compare(password, user.password);
-      
 
-      if ((result == true)) {
+      if (result == true) {
         var token = jwt.sign({ email: user.email, role: user.role }, secret);
         res.status(200);
         res.json({ token: token });

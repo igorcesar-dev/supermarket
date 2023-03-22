@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <form action="">
+    <h2>Cadastro de produto</h2>
+    <hr>
       <div class="columns is-multiline is-mobile">
         <div class="column is-5">
           <div class="field">
@@ -90,7 +91,6 @@
           </div>
         </div>
       </div>
-    </form>
   </div>
 </template>
 

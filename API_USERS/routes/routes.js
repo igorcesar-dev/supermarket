@@ -3,6 +3,7 @@ var app = express();
 var router = express.Router();
 var HomeController = require("../controllers/HomeController");
 var UserController = require("../controllers/UserController");
+var AdminAuth = require("../middleware/AdminAuth")
 
 router.get('/', HomeController.index);
 router.post('/user', UserController.create);
@@ -13,5 +14,5 @@ router.delete('/user/:id', UserController.delete);
 router.post('/recoverypassword', UserController.recoveryPassword);
 router.post('/changepassword', UserController.changePassword);
 router.post('/login', UserController.login);
-
+router.get('/validate', AdminAuth, HomeController.validate)
 module.exports = router;

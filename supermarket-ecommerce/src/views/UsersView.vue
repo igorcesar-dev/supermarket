@@ -17,12 +17,30 @@
           <td v-if="user.role == 0">Comum</td>
           <td v-if="user.role == 1">Admin</td>
           <td>
-            <button class="button is-success">Editar</button>
-            <button class="button is-danger">Excluir</button>
+            <button class="button is-success mr-2">Editar</button>
+            <button class="button is-danger" @click="showModalUser(user.id)">Excluir</button>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <div :class="{ modal: true, 'is-active': showModal }">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Você quer realmente deletar este usuário?
+            </p>
+          </header>
+          <div class="card-footer p-2">
+            <button class="card-footer-item button is-success mr-2">Sim</button>
+            <button class="card-footer-item button is-danger" @click="hideModal()">Não</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" @click="hideModal()"></button>
   </div>
 </template>
 
@@ -48,8 +66,18 @@ export default {
   data() {
     return {
       users: [],
+      showModal: false,
     };
   },
+  methods: {
+    hideModal(){
+      this.showModal = false;
+    },
+    showModalUser(id){
+      console.log(id);
+      this.showModal = true;
+    }
+  }
 };
 </script>
 

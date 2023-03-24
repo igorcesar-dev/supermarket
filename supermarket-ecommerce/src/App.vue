@@ -1,5 +1,8 @@
 <template>
-  <router-view/>
+  <router-link class="mr-2" to="/">Início</router-link>
+  <router-link class="mr-2" to="/admin/users">Usuários</router-link>
+  <router-link to="/login">Login</router-link>
+  <router-view />
 </template>
 
 <style>

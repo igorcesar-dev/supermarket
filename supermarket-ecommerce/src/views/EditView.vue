@@ -24,9 +24,7 @@
           class="input"
           v-model="email"
         />
-        <button @click="update" class="button is-success">
-          Editar
-        </button>
+        <button @click="update" class="button is-success">Editar</button>
       </div>
     </div>
   </div>
@@ -53,7 +51,7 @@ export default {
       })
       .catch((err) => {
         console.log(err.response);
-        this.$router.push({name: 'Users'})
+        this.$router.push({ name: "Users" });
       });
   },
   data() {
@@ -66,11 +64,18 @@ export default {
   },
   methods: {
     update() {
+      var req = {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+
       axios
-        .post("http://localhost:8686/user", {
+        .put("http://localhost:8686/user", {
           email: this.email,
           name: this.name,
-        })
+          id: this.id,
+        }, req)
         .then((res) => {
           console.log(res);
           this.$router.push({ name: "Home" });

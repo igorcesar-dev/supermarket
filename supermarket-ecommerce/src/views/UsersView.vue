@@ -17,8 +17,14 @@
           <td v-if="user.role == 0">Comum</td>
           <td v-if="user.role == 1">Admin</td>
           <td>
-            <button class="button is-success mr-2">Editar</button>
-            <button class="button is-danger" @click="showModalUser(user.id)">Excluir</button>
+            <router-link :to="{name: 'UserEdit', params: {id: user.id}}">
+              <button class="button is-success mr-2">
+                Editar
+              </button></router-link
+            >
+            <button class="button is-danger" @click="showModalUser(user.id)">
+              Excluir
+            </button>
           </td>
         </tr>
       </tbody>
@@ -34,13 +40,27 @@
             </p>
           </header>
           <div class="card-footer p-2">
-            <button class="card-footer-item button is-success mr-2">Sim</button>
-            <button class="card-footer-item button is-danger" @click="hideModal()">Não</button>
+            <button
+              class="card-footer-item button is-success mr-2"
+              @click="deleteUser()"
+            >
+              Sim
+            </button>
+            <button
+              class="card-footer-item button is-danger"
+              @click="hideModal()"
+            >
+              Não
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <button class="modal-close is-large" aria-label="close" @click="hideModal()"></button>
+    <button
+      class="modal-close is-large"
+      aria-label="close"
+      @click="hideModal()"
+    ></button>
   </div>
 </template>
 
@@ -67,17 +87,36 @@ export default {
     return {
       users: [],
       showModal: false,
+      deleteUserId: -1,
     };
   },
   methods: {
-    hideModal(){
+    hideModal() {
       this.showModal = false;
     },
-    showModalUser(id){
-      console.log(id);
+    showModalUser(id) {
+      this.deleteUserId = id;
       this.showModal = true;
-    }
-  }
+    },
+    deleteUser() {
+      var req = {
+        headers: {
+          Authotization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+      axios
+        .delete("http://localhost:8686/user/" + this.deleteUserId, req)
+        .then((res) => {
+          console.log(res);
+          this.showModal = false;
+          this.users = this.users.filter((u) => u.id != this.deleteUserId);
+        })
+        .catch((err) => {
+          console.log(err);
+          this.showModal = false;
+        });
+    },
+  },
 };
 </script>
 

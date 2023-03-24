@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Register from "../views/RegisterView.vue";
-import Login from "../views/LoginView.vue";
-import Users from "../views/UsersView.vue";
+import Register from "../views/Admin/RegisterView.vue";
+import Login from "../views/Admin/LoginView.vue";
+import Users from "../views/Admin/UsersView.vue";
 import axios from "axios";
-import Edit from '../views/EditView.vue';
+import Edit from '../views/Admin/EditView.vue';
 
 function AdminAuth(to, from, next) {
   if (localStorage.getItem("token") != undefined) {

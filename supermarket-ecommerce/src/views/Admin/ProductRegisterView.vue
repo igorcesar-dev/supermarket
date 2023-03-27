@@ -1,96 +1,89 @@
 <template>
   <div class="container">
-    <h2>Cadastro de produto</h2>
-    <hr>
-      <div class="columns is-multiline is-mobile">
-        <div class="column is-5">
-          <div class="field">
-            <label class="label">Nome</label>
-            <div class="control">
+    <form action="/produto/save" method="post">
+      <div class="card form-create">
+        <div class="card-body">
+          <h1 class="card-title">Cadastro de produtos</h1>
+          <hr />
+          <div class="div-grid">
+            <div class="boxes">
+              <label for="name" class="form-label">Image</label>
               <input
-                class="input"
+                type="file"
+                name="image"
+                class="form-control"
+                id="imagem-produto"
+                placeholder="Insira a imagem do produto"
+              />
+            </div>
+            <div class="boxes">
+              <label for="name" class="form-label">Nome</label>
+              <input
                 type="text"
-                placeholder="Digite o nome do produto"
+                name="name"
+                class="form-control"
+                id="nome-produto"
+                placeholder="Insira o nome do produto"
               />
             </div>
-          </div>
-        </div>
-
-        <div class="column is-6">
-          <div class="field">
-            <label class="label">Descrição</label>
-            <div class="control">
+            <div class="boxes">
+              <label for="price" class="form-label">Preço</label>
               <input
-                class="input"
                 type="text"
-                placeholder="Digite uma descrição do produto"
+                name="price"
+                class="form-control"
+                id="preco-produto"
+                placeholder="Insira o preço do produto"
               />
             </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Preço</label>
-            <div class="control">
+            <div class="boxes">
+              <label for="description" class="form-label">Descrição</label>
               <input
-                class="input"
+                class="form-control"
+                type="text"
+                name="description"
+                id="descricao-produto"
+                placeholder="Insira uma descrição sobre o produto"
+              />
+            </div>
+            <div class="boxes">
+              <label for="quantity" class="form-label">Quantidade</label>
+              <input
                 type="number"
-                placeholder="Digite o preço do produto"
+                name="quantity"
+                class="form-control"
+                id="quantidade-produto"
+                placeholder="Insira a quantidade"
               />
             </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Quantidade</label>
-            <div class="control">
+            <div class="boxes">
+              <label for="reference" class="form-label">Referência</label>
               <input
-                class="input"
-                type="nuber"
-                placeholder="Digite a quantidade de entrada"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Referência</label>
-            <div class="control">
-              <input
-                class="input"
                 type="number"
-                placeholder="Digite o código de referência do produto"
+                name="reference"
+                class="form-control"
+                id="referencia-produto"
+                placeholder="Insira a referência do produto"
+              />
+            </div>
+            <div class="boxes">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Categoria</label
+              >
+              <input
+                name="category"
+                type="text"
+                class="form-control"
+                id="categoria"
               />
             </div>
           </div>
-        </div>
-
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label"> Categoria </label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Alimento</option>
-                  <option>Limpeza</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-grouped column">
-          <div class="control">
-            <button class="button is-success">Sign up</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-          </div>
+          <button type="submit" class="btn btn-success" style="width: 10rem">
+            Criar
+          </button>
         </div>
       </div>
+    </form>
   </div>
 </template>
 

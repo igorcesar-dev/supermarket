@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Register from "../views/Admin/RegisterView.vue";
 import Login from "../views/Admin/LoginView.vue";
 import Users from "../views/Admin/UsersView.vue";
+import Product from "../views/Admin/ProductRegisterView.vue";
 import axios from "axios";
 import Edit from '../views/Admin/EditView.vue';
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/productRegister",
+    name: "Product",
+    component: Product,
   },
   {
     path: "/login",

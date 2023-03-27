@@ -39,7 +39,7 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="/admin/produtos"
+                  href="/admin/products"
                   >Produtos</a
                 >
               </li>
